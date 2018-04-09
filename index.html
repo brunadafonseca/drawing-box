@@ -8,12 +8,11 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 class="main-title">Draw something nice:</h1>
-  </header>
   
   <main class="container">
     <section class="new-drawing">
+      <h1 class="main-title">Draw something nice:</h1>
+      <hr>
       <div class="drawing-options">
         <div>
           <input id="color" type="color" oninput="setColor(value)">
@@ -37,16 +36,11 @@
       </div>
     </section>
       
-    <section class="saved-drawings">
+    <section class="saved-drawings hidden">
       <h2 class="drawings-header">Your drawings:</h2>
-      <p class="no-drawings">You have no drawings yet :(</p>
       <div class="drawings"></div>
     </section>
   </main>
-
-  <footer>
-    <p><small>Made with <3 by <a href="#">Bruna</a></small></p>
-  </footer>
   <script src="app.js"></script>
 </body>
 </html>
