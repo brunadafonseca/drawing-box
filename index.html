@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 Canvas</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="main-title">Draw something nice:</h1>
+  </header>
+  
+  <main class="container">
+    <section class="new-drawing">
+      <div class="drawing-options">
+        <div>
+          <input id="color" type="color" oninput="setColor(value)">
+          <p>or</p>
+          <button class="btn-rainbow-colors" onclick="setRainbowColor()"></button>    
+        </div>
+        
+        <div>
+          <input type="range" min="1" max="75" value="5" id="line-stroke" oninput="setLineWidth(value)">
+          <output for="line-stroke" id="stroke">5</output>
+        </div>
+      </div>
+      <div class="canvas-box">
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <button class="btn-save" onclick="saveDrawing()">Save</button>
+      <button class="btn-clear" onclick="clearDrawing()">Reset</button>
+    </section>
+      
+    <section class="saved-drawings">
+      <h2 class="drawings-header">Your drawings:</h2>
+      <p class="no-drawings">You have no drawings yet :(</p>
+      <div class="drawings"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><small>Made with <3 by <a href="#">Bruna</a></small></p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
