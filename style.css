@@ -4,7 +4,8 @@
 
 body {
   font-family: 'Nunito', 'Helvetica', sans-serif;
-  padding: 1em;
+  padding: 0;
+  margin: 0;
 }
 
 button {
@@ -23,6 +24,8 @@ p {
 
 header {
   grid-area: header;
+  background-color: #DB2763;
+  height: 200px;
 }
 
 /* main content */
@@ -43,6 +46,8 @@ header {
 .new-drawing {
   margin-bottom: 3em;
   grid-area: canvas;
+  display: flex;
+  flex-direction: column;
 }
 
 .drawing-options {
@@ -50,16 +55,6 @@ header {
   display: flex;
   justify-content: space-between;
   padding: .5em;
-}
-
-.btn-rainbow-colors {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-              linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-              linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-  border: none;
 }
 
 #canvas {
@@ -112,8 +107,6 @@ header {
   }
 }
 
-
-
 @media (min-width: 320px) {
   .drawing {
     width: 45%;
@@ -128,11 +121,19 @@ header {
 
 /* page buttons */
 
+.btns {
+  align-self: flex-end;
+  margin-top: 1em;
+}
+
+.btn-save {
+  margin-right: 1em;
+}
+
 .download-drawing,
 .btn-save,
 .btn-clear {
-  margin-top: .7em;
-  padding: .5em 1em;
+  padding: .5em 2em;
   border: 2px solid var(--main-dark);
   display: inline-block;
   text-decoration: none;
@@ -145,6 +146,16 @@ header {
   cursor: pointer;
   background-color: var(--main-dark);
   color: #fff;
+}
+
+.btn-rainbow-colors {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+              linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+              linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+  border: none;
 }
 
 
