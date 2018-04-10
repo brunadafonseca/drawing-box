@@ -9,51 +9,11 @@ body {
   margin: 0;
 }
 
-button {
-  font-family: 'Nunito', 'Helvetica', sans-serif;
-  font-size: 1em;
-}
 
-button:focus {
- outline: none;
-}
-
-p {
-  display: inline;
-  margin: 0 1em;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
-a:hover {
-  color: 
-}
-
-header {
-  grid-area: header;
-  padding: 0 2em;
-}
-
-
-hr {
-  border-bottom: 2px solid var(--main-dark);
-  max-width: 100px;
-  display: block;
-}
 /* main content */
 
 .container {
   padding: 1.2em;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas:
-    'canvas canvas canvas canvas canvas'
-    'saved saved saved saved saved';
-  grid-gap: 2em;
 }
 
 
@@ -61,9 +21,9 @@ hr {
 
 .new-drawing {
   margin-bottom: 3em;
-  grid-area: canvas;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .drawing-options {
@@ -87,37 +47,10 @@ hr {
 
 /* saved drawings */
 
-.saved-drawings {
-  grid-area: saved;
-  transition: all 0.6s ease-out;
-  animation-duration: 2s;
-  animation-name: bounceIn;
-}
-
-.fadein, .fadeout {
-  /* opacity: 0; */
-  -moz-transition: right 0.4s ease-in-out;
-  -o-transition: right 0.4s ease-in-out;
-  -webkit-transition: right 0.4s ease-in-out;
-  transition: right .4s ease-in-out;
-}
-
 .fadein {
   opacity: 1;
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
+  transform: none;
+  transition: all .5s cubic-bezier(.36,-.64,.34,1.76);
 }
 
 .drawing {
@@ -132,6 +65,7 @@ hr {
   height: auto;
   margin-right: 1em;
   box-shadow: var(--shadow);
+  transition: all 0.6s ease-out;
 }
 
 .drawing-frame > img {
@@ -142,27 +76,6 @@ hr {
   display: none;
 }
 
-@media (min-width: 1020px) {
-  .container {
-    grid-template-areas: 
-      'canvas canvas canvas canvas saved';
-  }
-
-  .saved-drawings {
-    border-left: 1px solid var(--main-dark);
-    padding: 0 2em;
-    background-color: #ccc;
-  }
-
-  .drawing-frame {
-    background-color: #fff;
-  }
-
-  .drawings {
-    flex-direction: column;
-  }
-}
-
 @media (min-width: 600px) and (max-width: 900px) {
   .drawing {
     width: 45%;
@@ -171,6 +84,7 @@ hr {
   .drawings {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
@@ -185,8 +99,45 @@ hr {
   }
 }
 
+@media (min-width: 1200px) and (max-width: 1800px) {
+  .container {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+
+  .drawing {
+    width: 20%;
+  }
+
+  .drawings {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    padding-left: 8em;
+    padding-right: 8em;
+  }
+
+  .drawings {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 
 /* page buttons */
+
+button {
+  font-family: 'Nunito', 'Helvetica', sans-serif;
+  font-size: 1em;
+}
+
+button:focus {
+ outline: none;
+}
 
 .btns {
   align-self: flex-end;
@@ -266,4 +217,16 @@ input[type=range]:focus {
 
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: rgb(71, 70, 71);
+}
+
+p {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
 }

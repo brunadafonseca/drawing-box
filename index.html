@@ -8,15 +8,13 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
   <main class="container">
     <section class="new-drawing">
       <h1 class="main-title">Draw something nice:</h1>
-      <hr>
       <div class="drawing-options">
         <div>
           <input id="color" type="color" oninput="setColor(value)">
-          <p>or</p>
+          <p style="margin: 0 1em">or</p>
           <button class="btn-rainbow-colors" onclick="setRainbowColor()"></button>    
         </div>
         
@@ -36,10 +34,12 @@
       </div>
     </section>
       
-    <section class="saved-drawings hidden">
+    <aside class="saved-drawings">
       <h2 class="drawings-header">Your drawings:</h2>
-      <div class="drawings"></div>
-    </section>
+      <p class="empty-list">You have no drawings yet :(</p>
+      <ul class="drawings">
+      </ul>
+    </aside>
   </main>
   <script src="app.js"></script>
 </body>
